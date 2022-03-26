@@ -1,6 +1,6 @@
 " 不兼容vi
 set nocompatible
-
+set term=screen-256color
 "-----------
 " 语法和缩进
 " ----------
@@ -17,7 +17,6 @@ augroup END
 
 filetype plugin indent on " 开启文件类型检测
 set autoindent " 设置自动缩进
-
 
 "---------------
 " 基础编辑项配置
@@ -53,12 +52,12 @@ set smartcase
 " tab completion for files/bufferss
 set wildmode=longest,list
 set wildmenu
-set mouse+=a " enable mouse mode (scrolling, selection, etc)
+" set mouse+=a " enable mouse mode (scrolling, selection, etc)
 if &term =~ '^screen'
     " tmux knows the extended mouse mode
     set ttymouse=xterm2
 endif
-
+set clipboard=unnamedplus " 将+寄存器与系统剪贴板相关联
 set nofoldenable " 默认禁用折叠
 
 "-----------
